@@ -1,0 +1,145 @@
+<html>
+<head>
+	<script language="JavaScript">
+
+	function insert(num)
+	{
+		document.calc.f.value=document.calc.f.value+num;
+
+	}
+
+	function equal()
+	{
+		var exp=document.calc.f.value;
+		if(exp){
+				document.calc.f.value=eval(exp);
+			}
+		}
+function back(){
+	var exp=	document.calc.f.value;
+		document.calc.f.value=exp.substring(0,exp.length-1);
+
+	}
+	function c()
+	{
+		document.calc.f.value="";
+
+	}
+	</script>
+	<style>
+	.button{
+		width:40;
+		height:40;
+		font-size:25;
+		margin:3;
+		cursor:pointer;
+	}
+	.f{
+		width:190;
+		margin:5;
+		font-size:25;
+		padding:3;
+	}
+	.mk{
+		position:absolute;
+		top:50%;
+		left:45%;
+		transform:translateX(-50%)translateY(-50%);
+      
+        border-style:solid;
+        border-color:violet;
+        
+	}
+	.km{
+			background:linear-gradient(to right,rgb(41, 140, 165),rgb(231, 31, 58));
+	    height:100%;
+        
+	}
+	.button{
+
+  background-color:#0074d9;
+  border: none;
+  color: white;
+  padding: 15px 15px;
+  -webkit-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+}
+.m{
+  width: 100px;
+  height: 100px;
+  background: red;
+  -webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
+  transition: width 2s, height 4s;
+}
+
+.m:hover {
+  width: 300px;
+  height: 300px;
+}
+	</style>
+</head>
+  <body>
+     
+	  <div class="km">
+	  <div class="mk">
+
+	  <form name="calc">
+		  <input type="text" class="f"name="f" alt="mubaris">
+
+	</form>
+		  <table >
+
+	  <tr>
+	  <td><input type="button" class="button" value="1" onClick="insert(1)"></td>
+
+	  <td><input type="button" class="button" value="2" onClick="insert(2)"></td>
+	  <td><input type="button" class="button" value="3" onClick="insert(3)"></td>
+	  <td><input type="button" value="C" class="button" onClick="back()"></td>
+	  </tr>
+  <tr>
+	  <td><input type="button" class="button" value="4" onClick="insert(4)"></td>
+
+	  <td><input type="button" value="5" class="button" onClick="insert(5)"></td>
+	  <td><input type="button" value="6" class="button" onClick="insert(6)"></td>
+
+
+	  <td><input type="button" class="button" value="+" onClick="insert('+')"></td>
+	  </tr>
+  <tr>
+	  <td><input type="button" value="7" class="button" onClick="insert(7)"></td>
+      <td><input type="button" value="8"class="button" onClick="insert(8)"></td>
+	  <td><input type="button" value="9" class="button" onClick="insert(9)"></td>
+
+	  <td><input type="button" value="-" class="button" onClick="insert('-')"></td>
+	  </tr>
+  <tr>
+	    <td><input type="button" value="0" class="button" onClick="insert(0)"></td>
+	    <td><input type="button" value="/" class="button" onClick="insert('/')"></td>
+
+	  <td><input type="button" value="x" class="button" onClick="insert('*')"></td>
+
+		  <td rowspan="5"><input type="button" style="height:90" value="="  class="button" onClick="equal()"></td>
+	  </tr>
+	   <tr>
+
+	  <td><input type="button" value="." class="button" onClick="insert(.)"></td>
+
+	 	  <td><input type="button" value="AC" class="button" onClick="c()"></td>
+	   <td><input type="button" value="%" class="button" onClick="insert('%')"></td>
+
+	  </tr>
+</table>
+
+<!-- <div class="m" align="bottoom">
+  <b>mubaris</b>
+</div>-->
+  </div>
+  </div>
+
+</body>
+</html>
